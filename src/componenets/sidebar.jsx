@@ -9,16 +9,19 @@ import {
   faDumbbell,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import sbCl from "../js/Sidebar";
+
 
 class SideBar extends Component {
   render() {
     return (
       <div>
+        <h1 className="testdiv" id="testDiv" >
+          Hi!
+        </h1>
         <nav className="sbnav">
           <ul className="sbul">
             <li className="sbli">
-              <a href="" className="sbamenu">
+              <a href="" className="sbamenu" >
                 <FontAwesomeIcon icon={faBars} className="sblogo" />
                 <span className="sbtext">Sidebar</span>
               </a>
@@ -62,9 +65,6 @@ class SideBar extends Component {
             </li>
           </ul>
         </nav>
-        <helmet>
-          <script href="../js/Sidebar.js"></script>
-        </helmet>
       </div>
     );
   }

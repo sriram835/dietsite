@@ -86,3 +86,8 @@
      color: black;
 }
 
+.testdiv {
+  color: aqua;
+  left: 50%;
+  top: 50%;
+}
