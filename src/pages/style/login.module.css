@@ -1,0 +1,51 @@
+.background {
+    background-color: #393937;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    width: 350px;
+    height: 400px;
+    top: 90px;
+    left: 440px;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0px 0px 12px 2px black;
+}
+
+.lgntx {
+    position: absolute;
+    top: 30px;
+    left: 110px;
+}
+
+.inpemail {
+    width: 300px;
+    height: 40px;
+    top: 110px;
+    left: 25px;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.inppssw {
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    top: 200px;
+    left: 25px;
+    border-radius: 10px;
+}
+
+.lgnbtn {
+    width: 270px;
+    height: 50px;
+    position: absolute;
+    top: 280px;
+    left: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: #11E914 ;
+}

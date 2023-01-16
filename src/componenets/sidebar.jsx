@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import "./style/sidebar.css";
+import styles from "./style/sidebar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -11,22 +11,20 @@ import {
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Homepg from "../pages/home";
 
 class SideBar extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       isOpen: false,
       inHomepage: this.props.inHomepage,
-      inRecipepage: false,
-      inExercisepage: false,
-      inSettingpage: false,
+      inRecipepage: this.props.inRecipepage,
+      inExercisepage: this.props.inExercisepage,
+      inSettingpage: this.props.inSettingpage,
     };
-    
-  }
-
-  updateState = (value) => {
-    
   }
 
   toggle = () => {
@@ -38,17 +36,17 @@ class SideBar extends Component {
   render() {
     return (
       <div
-        className="container"
+        className={styles.container}
         style={{ width: this.state.isOpen ? "240px" : "45px" }}
       >
         <div
-          className="opbtn"
+          className={styles.opbtn}
           style={{ width: this.state.isOpen ? "240px" : "45px" }}
           onClick={this.toggle}
         >
-          <FontAwesomeIcon icon={faBars} className="oplg" />
+          <FontAwesomeIcon icon={faBars} className={styles.oplg} />
           <span
-            className="optx"
+            className={styles.optx}
             style={{ display: this.state.isOpen ? "block" : "none" }}
           >
             SideBar
@@ -56,7 +54,7 @@ class SideBar extends Component {
         </div>
 
         <div
-          className="hmbtn"
+          className={styles.hmbtn}
           style={{
             width: this.state.isOpen ? "240px" : "45px",
             opacity: this.state.isOpen ? "0.5" : "1",
@@ -65,33 +63,36 @@ class SideBar extends Component {
               : "0px 0px 0px 0px red",
           }}
         >
-          <FontAwesomeIcon icon={faHouse} className="hmlg" />
+          <FontAwesomeIcon icon={faHouse} className={styles.hmlg} />
           <span
-            className="hmtx"
-            style={{ display: this.state.isOpen ? "block" : "none" }}
+            className={styles.hmtx}
+            style={{
+              display: this.state.isOpen ? "block" : "none",
+              opacity: this.state.isOpen ? "0.5" : "0",
+            }}
           >
             Home
           </span>
         </div>
 
         <div
-          className="srch"
+          className={styles.srch}
           style={{ width: this.state.isOpen ? "240px" : "45px" }}
         >
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
-            className="srchlg"
+            className={styles.srchlg}
             style={{ opacity: this.state.isOpen ? "0.5" : "1" }}
           />
           <input
-            className="srchinpt"
+            className={styles.srchinpt}
             placeholder="Search"
             style={{ display: this.state.isOpen ? "block" : "none" }}
           />
         </div>
 
         <div
-          className="exerbtn"
+          className={styles.exerbtn}
           style={{
             width: this.state.isOpen ? "240px" : "45px",
             opacity: this.state.isOpen ? "0.5" : "1",
@@ -100,9 +101,9 @@ class SideBar extends Component {
               : "0px 0px 0px 0px red",
           }}
         >
-          <FontAwesomeIcon icon={faDumbbell} className="exerlg" />
+          <FontAwesomeIcon icon={faDumbbell} className={styles.exerlg} />
           <span
-            className="exertx"
+            className={styles.exertx}
             style={{ display: this.state.isOpen ? "block" : "none" }}
           >
             Exercises
@@ -110,7 +111,7 @@ class SideBar extends Component {
         </div>
 
         <div
-          className="rpsbtn"
+          className={styles.rpsbtn}
           style={{
             width: this.state.isOpen ? "240px" : "45px",
             opacity: this.state.isOpen ? "0.5" : "1",
@@ -119,9 +120,9 @@ class SideBar extends Component {
               : "0px 0px 0px 0px red",
           }}
         >
-          <FontAwesomeIcon icon={faBowlFood} className="rpslg" />
+          <FontAwesomeIcon icon={faBowlFood} className={styles.rpslg} />
           <span
-            className="rpstx"
+            className={styles.rpstx}
             style={{ display: this.state.isOpen ? "block" : "none" }}
           >
             Recipes
@@ -129,7 +130,7 @@ class SideBar extends Component {
         </div>
 
         <div
-          className="stgbtn"
+          className={styles.stgbtn}
           style={{
             width: this.state.isOpen ? "240px" : "45px",
             opacity: this.state.isOpen ? "0.5" : "1",
@@ -138,9 +139,9 @@ class SideBar extends Component {
               : "0px 0px 0px 0px red",
           }}
         >
-          <FontAwesomeIcon icon={faGear} className="stglg" />
+          <FontAwesomeIcon icon={faGear} className={styles.stglg} />
           <span
-            className="stgtx"
+            className={styles.stgtx}
             style={{ display: this.state.isOpen ? "block" : "none" }}
           >
             Settings

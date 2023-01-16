@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import Feed from "./componenets/feedback.jsx";
-import SideBar from "./componenets/sidebar.jsx";
-import Exercisepg from "./pages/exercises.jsx";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App.js";
+import Signin from "./pages/signin.jsx";
+import Login from "./pages/login.jsx";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Exercisepg />);
-
-
+ReactDOM.render(
+  <BrowserRouter>
+    <Login />
+  </BrowserRouter>,
+  document.getElementById("root")
+);

@@ -9,7 +9,7 @@ class Exercisepg extends Component {
   constructor(props) {
     super(props)
     this.state = {
-    inHomepage: true
+    inExercisepage: true
     };
   }
 
@@ -17,7 +17,10 @@ class Exercisepg extends Component {
     return (
       <div>
         <div>
-          <SideBar inHomepage = {this.state.inHomepage} />
+          <h1 style={{position: "relative", left: "50px"}}>This is Exercise page</h1>
+        </div>
+        <div>
+          <SideBar inExercisepage = {this.state.inExercisepage} />
         </div>
       </div>
     );
